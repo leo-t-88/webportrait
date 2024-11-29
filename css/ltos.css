@@ -1,0 +1,327 @@
+/*Window UI*/
+.webpage, .mediapage, .imgpage, .sidebar{
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    transform: translate(-50%, -50%);
+    transition: all ease-out 0.4s;
+
+}
+.webcontent, .mediacontent, .imgcontent{
+    backdrop-filter: blur(10px);
+    position: fixed;
+    transform: translate(-50%, 0%);
+    margin: 0;
+    overflow-x: hidden;
+}
+.imgcontent, .mediacontent, .reduwindowcont{
+    border-radius: 5px;
+    width: calc(100% - 24px);
+    height: calc(100% - 60px);
+}
+
+/*Main Windows*/
+.webpage{
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: 100%;
+}
+.webcontent{
+    background-color: rgba(240, 251, 255, 1);
+    bottom: 0px;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 227, 179);
+    height: 100%;
+}
+h1{
+    font-size: 5.5em;
+    margin: 0;
+}
+.sc1{
+    opacity: 0;
+}
+.smooth-scroll{
+    font-size: 40px;
+}
+
+@keyframes reduwin {
+    0%{
+        border-radius: 0px;
+        width: 100%;
+        height: 100%;
+    }
+    55%{
+        border-radius: 5px;
+        width: 99%;
+        height: 99%;
+    }
+    100%{
+        border-radius: 15px;
+        width: 77%;
+        height: 77%;
+    }
+}
+
+.reduwindow{
+    animation: reduwin 0.6s;
+    border-radius: 10px;
+    width: 77%;
+    height: 77%;
+}
+
+@keyframes reduwincont {
+    0%{
+        border-radius: 0px;
+    }
+    55%{
+        border-radius: 5px;
+    }
+    100%{
+        border-radius: 15px;
+    }
+}
+
+.reduwindowcont{
+    animation: reduwincont 0.6s;
+    border-radius: 5px;
+    bottom: 12px;
+    width: calc(100% - 24px);
+    height: calc(100% - 60px);
+}
+.winicon{
+    display: inline;
+    position: absolute;
+    right: 7px;
+    top: 12px;
+}
+.winicon img{
+    height: 20px;
+    padding: 4px;
+    border-radius: 5px;
+}
+.winicon img:hover{
+    background-color: rgba(234, 249, 250, 0.7);
+}
+.winicon img:last-of-type:hover{
+    background-color: rgba(255, 82, 82, 0.7);
+}
+.webpage > input{
+    display: block;
+    margin: 6px auto;
+    width: 300px;
+    height: 35px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(240, 251, 255, 0.5);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    font-size: 16px;
+}
+
+h3{
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    margin: 0px;
+    font-size: 18px;
+}
+
+#present{
+    margin: 0 20px 70px;
+}
+section{
+    padding: 20px;
+    font-size: 1.35em;
+}
+section > div > h2{
+    font-size: 2.5em;
+    margin: 10px 0;
+    width: fit-content;
+    background: linear-gradient(to right, #8cbbcf 25%, #93d36b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.hcenter{
+    margin: 20px auto ;
+}
+p{
+    margin: 7px 0;
+}
+.fa-volume:hover{
+    color: #aaaaaa;
+}
+
+/* Style pour les sections */
+.prog, .music {
+    display: grid;
+    gap: 4%;
+    align-items: center;
+}
+.prog div, .music div{
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    padding: 15px;
+    max-height: 320px;
+    overflow: auto;
+}
+.prog{
+    grid-template-columns: 60% 35%;
+}
+.music{
+    grid-template-columns: 35% 60%;
+}
+.prog img, .music img {
+    width: 100%;
+    height: auto;
+}
+
+#intelch{
+    margin-top: -5px;
+    background-color: rgb(25, 96, 131);
+    color: #ffffff;
+}
+
+.gridcontainer {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    gap: 4%;
+    margin-bottom: 100px;
+}
+.gridcontainer div{
+    text-align: center;
+    background-color: #24364a;
+    border-radius: 10px;
+    padding: 10px 30px;
+}
+.gridcontainer div:hover {
+    transform:scale(1.05)
+}
+#revca, #revcc, #revcs, #revcm, #revci{
+    color: #000;
+    background-color: #dddddd;
+    font-size: 0.9em;
+    padding: 0 5px;
+    border-radius: 10px;
+    width: fit-content;
+}
+
+#reussite{
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(59,82,104);
+    text-align: center;
+    color: #ffffff;
+    height: 50px;
+    margin-top: -25px;
+}
+
+/*Reveal effect*/
+.reveal.active{
+    transform: translateY(0);
+}
+.reveal{
+    transform: translateY(175px);
+}
+.bleft.active, .bright.active{
+    transform: translateX(0px);
+}
+.bleft{
+    transform: translateX(-175px);
+}
+.bright{
+    transform: translateX(175px);
+}
+
+/*Player Windows*/
+.mediapage, .imgpage{
+    scale: 0;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    width: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    z-index: 3;
+}
+.mediacontent, .imgcontent{
+    left: 50%;
+    border-radius: 5px;
+    bottom: 10px;
+    width: calc(100% - 24px);
+    height: calc(100% - 60px);
+}
+.fa-turntable{
+    font-size: 100px;
+    margin: 10px;
+}
+#audioPlayer{
+    width: 100%;
+    height: 20%;
+    position: absolute;
+    bottom: 0px;
+}
+
+/*IMG Reader*/
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.imgpage button {
+    margin: 5px;
+    width: 40px;
+    height: 40px;
+    border: none;
+}
+.imgcontent{
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+}
+.imgcontent img {
+    height: auto;
+    width: auto;
+    transform-origin: top left;
+}
+
+/* Supprimer le style des contrôles dans certains navigateurs comme Chrome */
+#audioPlayer::-webkit-media-controls-panel {
+    background-color: transparent !important;
+}
+
+#audioPlayer::-webkit-media-controls-enclosure {
+    background-color: transparent !important;
+}
+
+/*Mode Tablette / Mobile Paysage*/
+@media screen and (max-width: 900px){
+    .prog, .music, .gridcontainer{
+        grid-template-columns: 100%;
+    }
+    .webpage > input {
+        width: 175px;
+    }
+    h1{
+        font-size: 4em;
+    }
+    #intelch > div{
+        padding-bottom: 40px;
+    }
+}
+
+/*Mobile Portrait non supporté*/
+@media screen and (max-width: 550px){
+    .nosupport{
+        display: block;
+    }
+}
+  

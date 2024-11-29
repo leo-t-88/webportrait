@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <title>Mon WebPortrait</title>
+        <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#A8FFCA"/>
+        <meta name="title" content="Léo.t88">
+        <link rel="icon" type="image/png" href="./assets/favicon.png"/>
+        <script src="https://leo-t-88.github.io/icon.js"></script>
+
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/ltos.css">
+    </head>
+    <body>
+        <!-- Element Animation lancement -->
+        <div id="logobox">
+            <a href="./index.html"><img src="./assets/favicon.png" id="logo1"></a>
+        </div>
+
+        <!-- Vérification JS activé -->
+        <noscript><strong>JavaScript est désactivé !</strong><br/>Ce projet requiert JavaScript pour fonctionner. Veuillez l'activer dans les paramètres de votre navigateur.</noscript>
+        <!-- Mobile Format Portrait Non supporté -->
+        <div class="nosupport">
+            <h2>L'affichage mobile au format portrait n'est pas supporté !</h2>
+        </div>
+        
+        <!-- Barre d'entête LT OS UI -->
+        <div class="topbar">
+            <div class="topright">
+                <i class="fad fa-wifi-slash" id="wifino"></i><i class="fas fa-wifi" id="wifiyes"></i>
+                <p id="batterycurent"></p><i class="fad fa-battery-full" id="fullb"></i><i class="fad fa-battery-half" id="minb"></i><i class="fad fa-battery-bolt" id="charb"></i>
+                <p id="datecurrent"></p>
+            </div>
+        </div>
+
+        <!-- Fenêtre principale LT OS UI -->
+        <div class="webpage">  
+            <h3><i class="far fa-bars" style="margin-right: 20px;"></i>Mon WebPortrait</h3>
+            <input type="search" placeholder="Rechercher">
+            <div class="winicon">
+                <img src="./assets/minimize.png" onclick="document.querySelector('.webpage').style.opacity = '0';" onmouseleave="document.querySelector('.webpage').style.opacity = '1'">
+                <img src="./assets/maximize.png" id="webmini" onclick="reduwin('web')">
+                <img src="./assets/maxmin.png" id="webmaxi" onclick="fullwin('web')">
+                <img src="./assets/close.png">
+            </div>
+            <div class="webcontent">
+                <header>
+                    <h1>Mon WebPortrait</h1>
+                    <a href="#present" class="smooth-scroll sc1"><i class="fas fa-chevron-down"></i></a>
+                </header>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+                    <path fill="rgb(255, 227, 179)" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,122.7C640,128,800,160,960,154.7C1120,149,1280,107,1360,85.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#007acc;"></path>
+                </svg>
+                <!--
+                Section Présentation -->
+                <section id="present">
+                    <div class="reveal">
+                        <h2>Léo</h2>
+                        <div>
+                            <p>Hey👋! Enchanté je m'appelle Léo j'ai <b id="age"></b>.</p>
+                            <p>J'ai découvert la programmation au travers du développement Web pendant le 2<sup>e</sup> confinement, au fur et à mesure cela est alors devenu une passion pour moi.</p>
+                            <p>C'est ainsi qu'en 2024, j'entre alors en 1ère année de BUT Informatique.</p>
+                        </div>
+                    </div>
+                </section>
+                <!--
+                Section Mes Passions -->
+                <section style="text-align: center;">
+                    <div class="reveal">
+                        <h2 class="hcenter">Mes Passions</h2>
+                        <h4>Programmation</h4>
+                        <div class="prog">
+                            <div>
+                                <p>Depuis que j'ai commencé le Développement Web durant le 2<sup>e</sup> confinement (D'abord avec HTML et CSS, puis 2ans après avec JavaScript).</p>
+                                <p>La programmation est devenue une passion pour moi, il peut m'arriver par exemple de coder ou de chercher pendant des heures une solution pour résoudre un bug.</p>
+                                <p>De plus, depuis maintenant 1 an, j'ai débuté dans le développement d'applications (en C# avec WPF et Avalonia UI).</p>
+                            </div>
+                            <div>
+                                <img src="./assets/vscode.jpg" height="200px" alt="Partie du code HTML de ce WebPortrait" title="Partie du code HTML de ce WebPortrait" class="imgdiv" onclick="document.getElementById('zoom-image').src = './assets/vscode.jpg'; reduwin('img');">
+                            </div>
+                        </div>
+                        <h4>Musique</h4>
+                        <div class="music">
+                            <div style="text-align: center;">
+                                <img src="./assets/ableton.jpg" height="200px" alt="Vue session dans Ableton Live, du mix que vous pouvez écouter via le bouton ci-dessous." title="Vue session dans Ableton Live, du mix que vous pouvez écouter via le bouton ci-dessous." onclick="document.getElementById('zoom-image').src = './assets/ableton.jpg'; reduwin('img');">
+                                <button onclick="document.getElementById('audioPlayer').src = './assets/mixwebportrait.ogg'; reduwin('media');">Ecouter le mix <i class="fas fa-headphones-alt"></i></button>
+                            </div>
+                            <div>
+                                <p>La musique me passionne depuis l'enfance.</p>
+                                <p>Dès mon plus jeune âge, j'étais attiré par tout ce qui touche à la musique, tel que l'installation (matériel sonore) ou bien la musique en général (app Virtual DJ) lors des soirées familiales.</p>
+                                <p>J'ai commencé à jouer du synthétiseur en 6ème, ce qui m'a apporté des connaissances en théorie musicale (solfège).</p>
+                                <p>J'apprécie la plupart des genres musicaux, mais mon genre préféré reste l'Electro (Notamment les styles EDM, Future Rave, House, Techno et French Touch).</p>                            
+                            </div>
+                        </div>
+                        <a href="#intelch" class="smooth-scroll"><i class="fas fa-chevron-down" style="margin-top: 20px;"></i></a>
+                    </div>
+                </section>
+
+                <!--
+                Section Intelligences multiples -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" style="margin-top: 150px;">
+                    <path fill="rgb(25, 96, 131)" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,122.7C640,128,800,160,960,154.7C1120,149,1280,107,1360,85.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" transform="scale(-1, -1) translate(-1440, -200)" />
+                </svg>                  
+                <section id="intelch">
+                    <div class="reveal">
+                        <h2 class="hcenter">Intelligences multiples</h2>
+                        <div class="gridcontainer">
+                            <div class="bleft reveal">
+                                <h2>+ Logique</h2>
+                                <p>"Depuis mon plus jeune âge, j'ai toujours eu plus ou moins de facilité en mathématiques et la capacité de parfois trouver une logique dans quelque chose que certaines personnes ne pourraient pas trouver."</p>
+                            </div>
+                            <div class="bright reveal">
+                                <h2>+ Spacial</h2>
+                                <p>"Au travers de mon imagination et de ma mémoire visuelle, j'ai la possibilité, à n'importe quel endroit, d'imaginer un objet à cet endroit en particulier, comme une sorte de "VR". Lorsque je suis en voiture, par exemple, je m'amuse parfois à regarder le paysage et imaginer à quoi il pourrait ressembler dans le futur."</p>
+                            </div>
+                            <div class="bleft reveal">
+                                <h2>+ Musicale</h2>
+                                <p>"Étant musicien et passionné par la musique, j'ai une certaine musicalité et la capacité à trouver facilement des mélodies et des rythmes. Je possède également une grande aptitude à mémoriser des morceaux et à inventer spontanément des chansons ou des compositions dans ma tête, guidé par mon instinct créatif."</p>
+                            </div>
+                            <div class="bright reveal">
+                                <h2>- Interpersonnel</h2>
+                                <p>"Etant timide et introverti, je ne me sens pas toujours à l'aise pour aller spontanément vers les autres ou prendre la parole devant un groupe. Cela peut rendre les interactions sociales plus difficiles pour moi, surtout dans des contextes où je suis exposé à plusieurs personnes en même temps."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <h2>Mon Portrait Chinois</h2>
+                        <p>Si j'étais un animal, je serais <b id="revca" onclick="document.getElementById('revca').innerText = 'un Loup 🐺'">???</b> <i onclick="new Audio('./assets/loup.ogg').play();" class="fas fa-volume"></i></p>
+                        <p>Si j'étais une couleur, je serais <b id="revcc" onclick="document.getElementById('revcc').innerText = 'le Bleu 🩵'">???</b> <i onclick="new Audio('./assets/bleu.ogg').play();" class="fas fa-volume"></i></p>
+                        <p>Si j'étais une saison, je serais <b id="revcs" onclick="document.getElementById('revcs').innerText = 'le Printemps 🌳'">???</b> <i onclick="new Audio('./assets/printemps.ogg').play();" class="fas fa-volume"></i></p>
+                        <p>Si j'étais une musique, je serais <b id="revcm" onclick="document.getElementById('revcm').innerText = 'R3HAB & Sigala - Runaway 🎧'">???</b></p>
+                        <p>Si j'étais un instrument de musique, je serais <b id="revci" onclick="document.getElementById('revci').innerText = 'un Synthétiseur 🎹'">???</b> <i onclick="new Audio('./assets/synth.ogg').play();" class="fas fa-volume"></i></p>
+                        <div style="text-align: center;">
+                            <a href="#reussite" class="smooth-scroll"><i class="fas fa-chevron-down"></i></a>
+                        </div>
+                    </div>
+                </section>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200" style="margin-bottom: 50px;">
+                    <path fill="rgb(25, 96, 131)" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,122.7C640,128,800,160,960,154.7C1120,149,1280,107,1360,85.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" data-darkreader-inline-fill="" style="--darkreader-inline-fill:#007acc;"></path>
+                </svg>
+                <!--
+                Section Réussite -->
+                <section id="reussite">
+                    <div class="reveal">
+                        <h2 class="hcenter">Ma plus grande réussite</h2>
+                        <img src="./assets/japkeyboard.jpg" width="50%" alt="Capture écran application clavier Japonnais" title="Capture écran application clavier Japonnais" onclick="document.getElementById('zoom-image').src = './assets/japkeyboard.jpg'; reduwin('img');"/>
+                        <p>Ce Clavier Japonais est ma plus grande réussite<p>
+                        <p>Développé après avoir rencontré des difficultés à installer celui de Windows par défaut.</p>
+                        <p>Ce fut alors ma première application réalisée en C# avec WPF pour l'interface, un projet qui m'a aidé à maîtriser ce langage que je venais d’apprendre.</p>
+                        <p>Malgré plusieurs bugs et contraintes, comme les restrictions de sécurité de Windows empêchant le transfert des saisies vers d'autres applications, j'ai persévéré. J'ai ainsi finalement publié l’application. Et j'y ai de plus ajouté de nouvelles fonctionnalité au cours du temps</p>
+                        <a href="https://github.com/leo-t-88/japanese-keyboard" target="_blank"><button>Voir sur Github <i class="fab fa-github"></i></button></a>
+                    </div>
+                </section>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 200">
+                    <path fill="rgb(59,82,104)" fill-opacity="1" d="M0,160L80,149.3C160,139,320,117,480,122.7C640,128,800,160,960,154.7C1120,149,1280,107,1360,85.3L1440,64L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z" transform="scale(-1, -1) translate(-1440, -200)" />
+                </svg>
+                <footer>
+                    <h2>Copyright ©Léo.t88</h2>
+                </footer>  
+            </div>
+        </div>
+
+        <!-- Media Player LT OS UI -->
+        <div class="mediapage">
+            <h3><img src="./assets/mediaplayer.png" style="margin: 0 15px -4px 0; height: 22px;"/>Media Player</h3>
+            <div class="winicon">
+                <img src="./assets/minimize.png" onclick="closewin('media')">
+                <img src="./assets/maxmin.png" id="mediamaxi" style="opacity: 0.5;">
+                <img src="./assets/close.png" onclick="closewin('media')">
+            </div>
+            <div class="mediacontent">
+                <audio src="" controls id="audioPlayer"></audio>
+                <i class="fas fa-turntable"></i>
+            </div>
+        </div>
+        <!-- Img Reader LT OS UI -->
+        <div class="imgpage">
+            <h3><img src="./assets/photo.png" style="margin: 0 15px -4px 0; height: 22px;"/>Photos</h3>
+            <div class="controls">
+                <span id="zoom-percentage" style="margin: 17px;">100%</span>
+                <button id="zoom-out">-</button>
+                <button id="zoom-in">+</button>
+            </div>
+            <div class="winicon">
+                <img src="./assets/minimize.png" onclick="closewin('img')">
+                <img src="./assets/maximize.png" id="imgmini" onclick="reduwin('img')">
+                <img src="./assets/maxmin.png" id="imgmaxi" onclick="fullwin('img')">
+                <img src="./assets/close.png" onclick="closewin('img')">
+            </div>
+            <div class="imgcontent">
+                <img src="./assets/background.jpg" id="zoom-image"/>              
+            </div>
+        </div>
+
+        <!-- Barre des tâches LT OS UI + espace pour scrollbar au lancement de la page-->
+        <div class="taskbar"><img src="./assets/windows.png"/><img src="./assets/favicon.png"/><img src="./assets/mediaplayer.png" onclick="reduwin('media')"/><img src="./assets/photo.png" onclick="reduwin('img')"/></div>
+
+        <h1 id="scrolling">.</h1>
+        <script src="./js/main.js"></script>
+    </body>
+</html>
