@@ -1,0 +1,157 @@
+/*Animation loading*/
+@keyframes start-anim {
+    0%{
+transform: scale(2);
+}
+}
+.lanim{
+    height: 175px;
+    z-index: 13;
+    animation: start-anim 0.6s;
+    transition: 0.6s;
+}
+
+#logo1{
+    display: none;
+}
+
+#logobox{
+    position: fixed;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    transition: 0.6s;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+noscript, .nosupport{
+    position: fixed;
+    top: 0px;
+    left: 0px; 
+    background-color: rgba(235, 8, 65, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    font-size: 25px !important;
+    color: white;
+    width: 100%;
+    height: 100%;
+    padding: 20% 0px;
+    z-index: 10;
+    text-align: center;
+}
+.nosupport{
+    display: none;
+}
+
+/*Main CSS*/
+body{
+    background-image: url(../assets/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+    font-family: sans-serif;
+    user-select: none;
+}
+a, a:hover, a:active{
+    color: #000;
+}
+img{
+    border-radius: 5px;
+    cursor: pointer;
+}
+button{
+    height: 42px;
+    width: 185px;
+    font-size: 19px;
+    background: transparent;
+    border: 2px solid #aaaa;
+    border-radius: 10px;
+}
+button:hover{
+    background: #c7ebe8;
+    border: 3px solid #9ecee6aa;
+}
+#revca, #revcc, #revcs, #revcm, #revci, button, .fa-volume{
+    cursor: pointer;
+}
+
+.taskbar, .taskbar img, .sc1, button, .reveal, .webcontent, .mediacontent, .imgcontent{
+    transition: all ease-out 0.5s;
+}
+.taskbar, .topbar, .winicon > input, button{
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/*Task and To bar*/
+.topbar, .taskbar, .webpage, .mediapage, .imgpage, .sidebar{
+    background-color: rgba(234, 249, 250, 0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    position: fixed;
+}
+.topbar{
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+.topright{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: 10px;
+}
+#batterycurent{
+    margin-right: -5px;
+}
+#fullb, #minb, #charb{
+    display: none;
+}
+.taskbar{
+    bottom: -60px;
+    left: 50%;
+    width: 275px;
+    height: 55px;
+    transform: translate(-50%, 0%);
+    border-radius: 12px;
+    z-index: 2;
+    text-align: center;
+}
+.taskbar img{
+    height: 35px;
+    margin: 10px;
+}
+.taskbar img:hover{
+    height: 45px;
+    margin: 5px;
+}
+
+/*Others*/
+#scrolling{
+    position: absolute;
+    top: 10px;
+    opacity: 0;
+    align-items: center;
+}
+
+/*Scrollbar*/ 
+/*Chrome, Edge, Safari*/
+*::-webkit-scrollbar{
+    width: 9px;
+    height: 9px;
+}
+*::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 50px;
+}
+*::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(115deg,#a2e0db 10%, #9ce7a4 90%);
+}
