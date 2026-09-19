@@ -37,6 +37,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: rgb(255, 227, 179);
     height: 100%;
 }

@@ -1,6 +1,6 @@
 // Animation lancemenent
 document.getElementById("scrolling").style.top = (window.innerHeight + 100) +"px";
-setTimeout(start, 700)
+setTimeout(start, 300)
 function start() {
     document.getElementById("logo1").style.display = "block";
     document.getElementById("logo1").classList.add("lanim");
@@ -38,15 +38,18 @@ window.addEventListener("scroll", reveal);
 window.addEventListener("scroll", scroll);
 window.addEventListener("resize", scroll);
   
+function triggerReduwin() {
+  document.querySelector(".webpage").classList.add("reduwindow");
+  document.querySelector(".webcontent").classList.add("reduwindowcont");
+  document.querySelector(".webcontent").style.overflowY = "scroll";
+  reduwin("web");
+  document.body.style.overflowY = "hidden";
+}
+
 function scroll(){
   let scrollPosition = window.scrollY;
   if (scrollPosition > 101) {
-    document.querySelector(".webpage").classList.add("reduwindow");
-    document.querySelector(".webcontent").classList.add("reduwindowcont");
-    document.querySelector(".webcontent").style.overflowY = "scroll";
-    document.querySelector(".sc1").style.opacity = "1";
-    reduwin("web");
-    document.body.style.overflowY = "hidden";
+    triggerReduwin();
   }
 }
 let imgfull = false
@@ -88,10 +91,7 @@ function fullwin(win){
   document.getElementById(win+"maxi").style.display ="none";
   document.getElementById(win+"mini").style.display ="inline";
 }
-function closewin(win){
-  if (win == "img"){
-    reduwin("img");
-  }
+function minimizewin(win){
   document.querySelector("."+win+"page").style.scale= "0";
 }
 
@@ -173,13 +173,13 @@ affichageHeure();
 const mediaDiv = document.querySelector(".mediapage");
 const imgDiv = document.querySelector(".imgpage");
 let isDragging = false;
-let activeDiv = null; // Variable pour savoir quelle div est en train d'être déplacée
+let activeDiv = null;
 
 function handleMouseDown(e, targetDiv, noDragSelectors, canDrag = true) {
   const isNoDrag = noDragSelectors.some(selector => e.target.closest(selector));
   if (!isNoDrag && canDrag) {
     isDragging = true;
-    activeDiv = targetDiv; // Associe la div en cours de drag
+    activeDiv = targetDiv;
 
     targetDiv.style.transform = "none";
     targetDiv.style.left = `${e.clientX - targetDiv.offsetWidth / 2}px`;
@@ -207,7 +207,7 @@ document.addEventListener("mousemove", (e) => {
 // Lorsque la souris est relâchée
 document.addEventListener("mouseup", () => {
   isDragging = false;
-  activeDiv = null; // Réinitialise la div active après avoir relâché la souris
+  activeDiv = null;
 });
 
 //Image Reader engine
@@ -216,23 +216,23 @@ const zoomOutBtn = document.getElementById('zoom-out');
 const zoomImage = document.getElementById('zoom-image');
 const zoomPercentage = document.getElementById('zoom-percentage');
 
-let scale = 1; // Le niveau initial de zoom
-const zoomStep = 0.1; // Pas de zoom
-const minScale = 0.3; // Zoom minimum
-const maxScale = 3;   // Zoom maximum
+let scale = 1;
+const zoomStep = 0.1;
+const minScale = 0.3;
+const maxScale = 3;
 zoomInBtn.addEventListener('click', function() {
-  if (scale < maxScale) { // Ne pas dépasser le zoom maximum
-    scale += zoomStep; // Augmente le zoom
-    if (scale > maxScale) scale = maxScale; // Verrouille à maxScale
+  if (scale < maxScale) {
+    scale += zoomStep;
+    if (scale > maxScale) scale = maxScale;
     zoomImage.style.transform = `scale(${scale})`;
     const percent = Math.round(scale * 100);
     zoomPercentage.textContent = `${percent}%`;
   }
 });
 zoomOutBtn.addEventListener('click', function() {
-  if (scale > minScale) { // Ne pas descendre en dessous du zoom minimum
-    scale -= zoomStep; // Réduit le zoom
-    if (scale < minScale) scale = minScale; // Verrouille à minScale
+  if (scale > minScale) {
+    scale -= zoomStep;
+    if (scale < minScale) scale = minScale;
     zoomImage.style.transform = `scale(${scale})`;
     const percent = Math.round(scale * 100);
     zoomPercentage.textContent = `${percent}%`;
